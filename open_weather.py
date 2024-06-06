@@ -24,8 +24,6 @@ list_of_Indian_cities = ["Delhi","Bengaluru", "Lucknow","Gorakhpur","Agra","Nagp
           "Coimbatore", "Madurai", "Mysore", "Dehradun", "Siliguri", "Ujjain", "Ranchi", "Vijayawada", "Kochi","Ajmer"]
 
 weather_data_holder = [] #For holding weather data of 30 cities.
-#weather_data_lock = threading.Lock()  # Lock for synchronizing access to weather_data_holder
-
 
 #One user with username and password
 One_user = {
@@ -59,7 +57,7 @@ def load_weather_data():
     print("Done waiting for 30 min.")
 
 # Schedule the fetch_weather_data function to run every 30 minutes
-scheduler.add_job(load_weather_data, 'interval', minutes = 1)
+scheduler.add_job(load_weather_data, 'interval', minutes = 30)
 scheduler.start()
 # Initial fetch
 load_weather_data()
