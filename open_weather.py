@@ -139,6 +139,6 @@ def weather_api():
         })
     else:
         return jsonify({"Error":"Request should be sent using POST."})
-
-if __name__ == '__main__':
-    app.run()
+#Comment this before deploying on render.com
+#if __name__ == '__main__':
+    #app.run()
